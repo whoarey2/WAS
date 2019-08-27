@@ -1,4 +1,4 @@
-package com.was.erp;
+﻿package com.was.erp;
 
 
 
@@ -13,7 +13,7 @@ public class ErpController {
 	Logger logger = Logger.getLogger(ErpController.class);
 	@GetMapping("login.was")
 	public String erpLogin() {
-		logger.info("WAS의 시작!!!~~~~~~~~~~~~~~~~");
+		logger.info("WAS의 시작!!!~~~~~~~~^^7~~~~");
 		return"";
 	}
 }
