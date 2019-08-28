@@ -13,7 +13,7 @@ public class ErpController {
 	Logger logger = Logger.getLogger(ErpController.class);
 	@GetMapping("login.was")
 	public String erpLogin() {
-		logger.info("WAS의 시작!!!~~~괜찮아?ㅋㅋㅋㅋ~~오늘은 잘 보내자 ㅎ;~~^^7~~~~");
+		logger.info("WAS의 시작!!!~~~괜찮아?ㅋㅋㅋㅋ열심히 해 보아요ㅎㅎㅎ호ㅗㅗ~~^^7~~~~");
 		return"";
 	}
 }
