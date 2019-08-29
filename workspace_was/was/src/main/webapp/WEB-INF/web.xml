@@ -16,7 +16,7 @@
 	
 	<!-- Filter  -->
 	<filter>
-		<filter-name>characterEncodeing</filter-name>
+		<filter-name>encodeingFilter</filter-name>
 		<filter-class>
 			org.springframework.web.filter.CharacterEncodingFilter
 		</filter-class>
@@ -24,10 +24,14 @@
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
 		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>characterEncodeing</filter-name>
-		<url-pattern>/</url-pattern>
+		<filter-name>encodeingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	<!-- Processes application requests -->
 	<servlet>
