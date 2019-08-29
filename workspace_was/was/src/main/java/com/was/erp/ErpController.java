@@ -14,8 +14,7 @@ public class ErpController {
 	@GetMapping("login.was")
 	public String erpLogin() {
 
-		logger.info("WAS의 시작!!!~무서워..~~~~~~^^7~~~~");
-		logger.info("이게 rebase야 ㅎㅎ");
+		logger.info("WAS의 시작!!!~~~괜찮아?ㅋㅋㅋㅋ열심히 해 보아요ㅎㅎㅎ호ㅗㅗ~~^^7~~~~");
 
 		return"";
 	}
