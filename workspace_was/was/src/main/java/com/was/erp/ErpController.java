@@ -27,7 +27,11 @@ public class ErpController {
 		logger.info("컨트롤러::::::::::::"+result);
 		logger.info("컨트롤러::::::::::::"+pMap.get("msg"));
 		logger.info("컨트롤러::::::::::::"+pMap.get("log"));
-		model.addAttribute("result", result);
-		return "login";
+		String path = "";
+		if("존재하지 않는 사원코드입니다..".equals(result)) {
+			path ="fail";
+			model.addAttribute("result", result);
+		}
+		return "main";
 	}
 }
