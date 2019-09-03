@@ -6,13 +6,13 @@
 				(List<Map<String,Object>>)request.getAttribute("rList");
 	Map<String,Object> rMap =null;
 	if(rList!=null){
-		out.print("getAttribute");
+		out.print("getAttribute 값 있음. <br>");
 		rMap = rList.get(0);
 	}
 	if(rMap!=null){
 		Object[] keys = rMap.keySet().toArray();
 		for(int i=0;i<keys.length;i++){
-		out.print(rMap.get(keys[i]));
+		out.print(rMap.get(keys[i])+"<br>");
 		}
 	}
 %>    

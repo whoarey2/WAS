@@ -27,7 +27,7 @@ public class EmpController implements ActionServlet {
 		rList.add(rMap);
 		model.setAddAttribute(rList);
 		model.setViewName("login");
-		model.setViewPath("/was/views");
+		model.setViewPath("/views");
 		model.setViewExtension("jsp");
 		return model;
 	}

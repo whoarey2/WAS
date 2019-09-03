@@ -17,9 +17,8 @@ public class ErpDao {
 	}
 	public String erpLogin(Map<String, Object> pMap) {
 		String result="";
-		pMap.put("empno", "0");
-		pMap.put("emp_pw", "0");
 		pMap.put("msg", "0");
+		pMap.put("outtime", "0");
 		try {
 			sqlSession = sqlSessionFactory.openSession();
 			sqlSession.selectOne("erpLogin", pMap);

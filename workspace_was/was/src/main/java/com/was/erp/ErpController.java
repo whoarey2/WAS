@@ -21,8 +21,11 @@ public class ErpController {
 	public String erpLogin(@RequestParam Map<String,Object> pMap) {
 
 		logger.info("WAS의 시작!!!~~~괜찮아?ㅋㅋㅋㅋ열심히 해 보아요ㅎㅎㅎ호ㅗㅗ~~^^7~~~~");
+		
 		String result = erpLogic.erpLogin(pMap);
 		logger.info("컨트롤러::::::::::::"+result);
+		logger.info("컨트롤러::::::::::::"+pMap.get("msg"));
+		logger.info("컨트롤러::::::::::::"+pMap.get("log"));
 		return "";
 	}
 }
