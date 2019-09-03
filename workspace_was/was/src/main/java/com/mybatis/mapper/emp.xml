@@ -9,7 +9,8 @@
     	{ CALL proc_login(
                 #{empno, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
                 ,#{emp_pw, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
-                ,#{msg, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String} 
+                ,#{msg, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+                ,#{log, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}                 
             )}
 
     </select>

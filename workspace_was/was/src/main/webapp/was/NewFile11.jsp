@@ -92,6 +92,11 @@ color: white;
 margin-left: 4px;
 }
 </style>
+<script type="text/javascript">
+function submitFuction(){
+    alert("I want this to appear after the modal has opened!");
+}
+</script>
 </head>
 <body>
 <div class="container">
@@ -107,19 +112,19 @@ margin-left: 4px;
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<form action="/erp/aqua/login.was">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="사원코드">
+						<input type="text" class="form-control" placeholder="사원코드" name="empno">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="비밀번호">
+						<input type="password" class="form-control" placeholder="비밀번호" name="emp_pw">
 					</div>
 					<div class="form-group">
 						<input type="submit" value="로그인" class="btn float-right login_btn">
