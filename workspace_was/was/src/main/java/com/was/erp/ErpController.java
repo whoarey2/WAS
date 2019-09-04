@@ -23,14 +23,13 @@ public class ErpController {
 
 		logger.info("WAS의 시작!!!~~~괜찮아?ㅋㅋㅋㅋ열심히 해 보아요ㅎㅎㅎ호ㅗㅗ~~^^7~~~~");
 		
-		String result = erpLogic.erpLogin(pMap);
-		logger.info("컨트롤러::::::::::::"+result);
+		erpLogic.erpLogin(pMap);
 		logger.info("컨트롤러::::::::::::"+pMap.get("msg"));
 		logger.info("컨트롤러::::::::::::"+pMap.get("log"));
 		String path = "";
-		if("존재하지 않는 사원코드입니다..".equals(result)) {
+		if("존재하지 않는 사원코드입니다..".equals(pMap.get("msg").toString())) {
 			path ="fail";
-			model.addAttribute("result", result);
+			model.addAttribute("result", pMap.get("msg").toString());
 		}
 		return "main";
 	}
