@@ -16,9 +16,8 @@ public class ErpDao {
 	SqlSessionTemplate sqlSessionTemplate;
 	public String erpLogin(Map<String, Object> pMap) {
 		String result="";
-		pMap.put("empno", "0");
-		pMap.put("emp_pw", "0");
-		pMap.put("msg", "0");
+		pMap.put("msg", "");
+		pMap.put("outtime", "");
 		sqlSessionTemplate.selectOne("erpLogin", pMap);
 		result = pMap.get("msg").toString();		
 		return result;
