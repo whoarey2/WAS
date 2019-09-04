@@ -14,13 +14,11 @@ public class ErpDao {
 
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
-	public String erpLogin(Map<String, Object> pMap) {
+	public void erpLogin(Map<String, Object> pMap) {
 		String result="";
 		pMap.put("msg", "");
 		pMap.put("outtime", "");
 		sqlSessionTemplate.selectOne("erpLogin", pMap);
-		result = pMap.get("msg").toString();		
-		return result;
 	}
 
 }
