@@ -40,12 +40,13 @@ public class ErpController extends HttpServlet{
         req.setAttribute("rList", rList);
         String path = model.getFullView();
         logger.info("반환페이지 풀네임 : "+path);
-        try {
-			RequestDispatcher view = req.getRequestDispatcher(path);
-			view.forward(req, res);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
+		  try { 
+			  RequestDispatcher view = req.getRequestDispatcher(path);
+			  view.forward(req, res); 
+			  } catch (IOException e) { 
+				  e.printStackTrace(); 
+			  }
         
 	}
 	public void doGet(HttpServletRequest req,HttpServletResponse res) 
