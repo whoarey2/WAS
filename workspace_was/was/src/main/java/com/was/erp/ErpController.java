@@ -20,11 +20,11 @@ public class ErpController {
 	@Autowired
 	ErpLogic erpLogic;
 	@PostMapping("login.was")
-	public String erpLogin(@RequestParam Map<String,Object> pMap,Model model) {
+	public String empLogin(@RequestParam Map<String,Object> pMap,Model model) {
 
 		logger.info("WAS의 시작!!!~~~괜찮아?ㅋㅋㅋㅋ열심히 해 보아요ㅎㅎㅎ호ㅗㅗ~~^^7~~~~");
 		
-		erpLogic.erpLogin(pMap);
+		erpLogic.empLogin(pMap);
 		logger.info("컨트롤러::::::::::::"+pMap.get("msg"));
 		logger.info("컨트롤러::::::::::::"+pMap.get("log"));
 		String path = "";
