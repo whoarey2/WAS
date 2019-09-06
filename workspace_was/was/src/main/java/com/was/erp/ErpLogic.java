@@ -16,4 +16,8 @@ public class ErpLogic {
 		erpDao.empLogin(pMap);
 	}
 
+	public void empSignUp(Map<String, Object> pMap) {
+		erpDao.empSignUp(pMap);
+	}
+
 }

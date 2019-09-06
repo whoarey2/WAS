@@ -13,25 +13,33 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@RequestMapping(value="/aqua")
+@RequestMapping(value="/emp*")
 @Controller
-public class ErpController {
-	Logger logger = Logger.getLogger(ErpController.class);
+public class EmpController {
+	private static final Logger logger = Logger.getLogger(EmpController.class);
 	@Autowired
 	ErpLogic erpLogic;
-	@PostMapping("login.was")
+	@PostMapping("emplogin.was")
 	public String empLogin(@RequestParam Map<String,Object> pMap,Model model) {
-
-		logger.info("WAS의 시작!!!~~~괜찮아?ㅋㅋㅋㅋ열심히 해 보아요ㅎㅎㅎ호ㅗㅗ~~^^7~~~~");
-		
+		logger.info("empLogin 호출 성공");
 		erpLogic.empLogin(pMap);
-		logger.info("컨트롤러::::::::::::"+pMap.get("msg"));
-		logger.info("컨트롤러::::::::::::"+pMap.get("log"));
 		String path = "";
 		if("존재하지 않는 사원코드입니다..".equals(pMap.get("msg").toString())) {
 			path ="fail";
 			model.addAttribute("result", pMap.get("msg").toString());
 		}
-		return "main";
+		return "main";//아직 미정
 	}
+	@PostMapping("empSignUp.was")
+	public String empSignUp(@RequestParam Map<String,Object> pMap,Model model) {
+		logger.info("empSignUp 호출 성공");
+		erpLogic.empSignUp(pMap);
+		String path = "";
+		if("존재하지 않는 사원코드입니다..".equals(pMap.get("msg").toString())) {
+			path ="fail";
+			model.addAttribute("result", pMap.get("msg").toString());
+		}
+		return "main";//아직 미정
+	}
+	
 }
