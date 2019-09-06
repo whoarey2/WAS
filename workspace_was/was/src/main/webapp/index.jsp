@@ -112,7 +112,7 @@ function submitFuction(){
 				</div>
 			</div>
 			<div class="card-body">
-				<form action="/erp/aqua/login.was" method="POST">
+				<form action="/erp/emplogin.was" method="POST">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>

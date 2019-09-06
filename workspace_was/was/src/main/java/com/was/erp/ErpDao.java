@@ -15,10 +15,13 @@ public class ErpDao {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 	public void empLogin(Map<String, Object> pMap) {
-		String result="";
 		pMap.put("msg", "");
 		pMap.put("outtime", "");
 		sqlSessionTemplate.selectOne("empLogin", pMap);
+	}
+	public void empSignUp(Map<String, Object> pMap) {
+		pMap.put("msg", "");
+		sqlSessionTemplate.selectOne("empSignUp", pMap);
 	}
 
 }
