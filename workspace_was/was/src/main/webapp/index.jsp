@@ -11,7 +11,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 html,body{
-background-image: url('/sample/images/11.jpg');
+background-image: url('/erp/images/11.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -112,7 +112,7 @@ function submitFuction(){
 				</div>
 			</div>
 			<div class="card-body">
-				<form action="/was/aquaLogin.was">
+				<form action="/erp/aqua/login.was" method="POST">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>

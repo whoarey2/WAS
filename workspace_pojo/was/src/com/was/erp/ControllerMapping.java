@@ -2,12 +2,14 @@ package com.was.erp;
 
 import java.util.Map;
 
-public class ControllerMapping {
+import org.apache.log4j.Logger;
 
-	public static ActionServlet mapping(String crud, Map<String, Object> pMap) {
+public class ControllerMapping {
+	private static final Logger logger = Logger.getLogger(ControllerMapping.class);
+	public static ActionServlet mapping(String mapping, Map<String, Object> pMap) {
 		ActionServlet aServlet=null;
-		if("aquaLogin".equals(crud)) {
-			aServlet = new EmpController(pMap);
+		if(mapping.indexOf("emp")>-1) {
+			aServlet = new EmpController(pMap,mapping);
 		}
 		return aServlet;
 	}

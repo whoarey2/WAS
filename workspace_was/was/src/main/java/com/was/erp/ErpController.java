@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,12 +19,12 @@ public class ErpController {
 	Logger logger = Logger.getLogger(ErpController.class);
 	@Autowired
 	ErpLogic erpLogic;
-	@GetMapping("login.was")
-	public String erpLogin(@RequestParam Map<String,Object> pMap,Model model) {
+	@PostMapping("login.was")
+	public String empLogin(@RequestParam Map<String,Object> pMap,Model model) {
 
 		logger.info("WAS의 시작!!!~~~괜찮아?ㅋㅋㅋㅋ열심히 해 보아요ㅎㅎㅎ호ㅗㅗ~~^^7~~~~");
 		
-		erpLogic.erpLogin(pMap);
+		erpLogic.empLogin(pMap);
 		logger.info("컨트롤러::::::::::::"+pMap.get("msg"));
 		logger.info("컨트롤러::::::::::::"+pMap.get("log"));
 		String path = "";
