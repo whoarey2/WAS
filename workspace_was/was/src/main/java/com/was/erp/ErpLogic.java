@@ -11,9 +11,13 @@ public class ErpLogic {
 	@Autowired
 	ErpDao erpDao;
 	
-	public void erpLogin(Map<String, Object> pMap) {
+	public void empLogin(Map<String, Object> pMap) {
 
-		erpDao.erpLogin(pMap);
+		erpDao.empLogin(pMap);
+	}
+
+	public void empSignUp(Map<String, Object> pMap) {
+		erpDao.empSignUp(pMap);
 	}
 
 }

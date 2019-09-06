@@ -5,7 +5,7 @@
 	 	select TO_CHAR(sysdate,'YYYY-MM-DD') from dual
     </select>
 
-    <select id="erpLogin" parameterType="map" statementType="CALLABLE">
+    <select id="empLogin" parameterType="map" statementType="CALLABLE">
     	{ CALL proc_login(
                 #{empno, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
                 ,#{emp_pw, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
