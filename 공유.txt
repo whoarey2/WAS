@@ -1,1 +1,3 @@
 log4j.appender.file.layout.ConversionPattern=[%d] [%p] (%13F:%L) %3x - %m%n
+
+이게뭐지?
