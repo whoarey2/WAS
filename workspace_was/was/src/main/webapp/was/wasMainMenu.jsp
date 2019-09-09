@@ -23,7 +23,7 @@
    <div class="col-sm-3">
       <div class="row">
           <div>
-              <a href="index.jsp" width="300px"><img src="/sample/images/logo.png" style="width: 300px; max-width: 760px; vertical-align: middle"></a>   
+              <a href="index.jsp" width="300px"><img src="/erp/images/logo.png" style="width: 300px; max-width: 760px; vertical-align: middle"></a>   
            </div>
       </div>
        <div class="row">

@@ -6,40 +6,51 @@
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="text/html;">
 <%@ include file="/common/bootStrap4.jsp" %>
-<title>Insert title here</title>
-<style>
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<title>생산품 등록/조회</title>
+<script type="text/javascript">
+function change() {
+	var frm = document.frm;	
+	var combo = frm.combo;
+	var txt = frm.combo_nm;	
+	var comboVal = combo.value;	
+	for(var i=0; i<combo.options.length; i++ ) {
+		if(combo.options[i].value == comboVal ) {
+			combo.options[i].checked = true;
+			txt.value= combo.options[i].name;
+		}
+	}
 
-td {
-	text-align: center;
+}
+</script>
+<style>
+ td {
 	padding: 8px;
-	width:300px;
+	width: 310px;
+	height: 35px
+}  
+
+ tr:nth-child(even) {
+	background-color: #f2f2f2;
 } 
 
-tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
-
-th {
+ th {
 	background-color: #343a40;
 	color: white;
-}
-body {
+} 
+ body {
   font-family: Arial;
-}
+} 
 
 * {
   box-sizing: border-box;
-}
-input[type="submit"]{
+} 
+ input[type="submit"]{
 	font-family: FontAwesome;
 	
-}
+} 
 
-form.example input[type=text] {
+ form.example input[type=text] {
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -47,9 +58,9 @@ form.example input[type=text] {
   width: 20%;
   background: #f1f1f1;
   
-}
+} 
 
-form.example button {
+ form.example button {
   float: left;
   width: 20%;
   padding: 10px;
@@ -57,24 +68,21 @@ form.example button {
   color: white;
   font-size: 17px;
   border: solid;
- /*  border: 1px solid grey; */
+  border: 1px solid grey; 
   border-left: none;
   cursor: pointer;
 }
 
-form.example button:hover {
+ form.example button:hover {
   background: #0b7dda;
-}
+} 
 
-form.example::after {
+ form.example::after {
   content: "";
   clear: both;
   display: table;
-}
-#proc_add{
-	width:150px;
-	height:35px;
-}
+} 
+
 </style>
 </head>
 <body>
@@ -97,26 +105,26 @@ form.example::after {
             <div class="list-group" style="width:300px; background-color: #383E49">
             <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#major" style="width:300px;text-align: center;font-size: x-large;">생산/품질관리</button>
                <div id="major" class="collapse">         
-                  <a href="#" class="list-group-item list-group-item-action">품목조회</a>
-                  <a href="#" class="list-group-item list-group-item-action">재고등록</a>
-                  <a href="#" class="list-group-item list-group-item-action">재고조회</a>
-                  <a href="productsAdd.jsp" class="list-group-item list-group-item-action">생산품등록</a>
-                  <a href="registerCustomer.jsp" class="list-group-item list-group-item-action">거래처등록/조회</a>
-                  <a href="#" class="list-group-item list-group-item-action">배송처조회</a>
-                  <a href="#" class="list-group-item list-group-item-action">배송처등록</a>
-                  <a href="#" class="list-group-item list-group-item-action">근태조회</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">품목조회</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">재고등록</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">재고조회</a>
+                  <a href="productsAdd.jsp" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">생산품등록/조회</a>
+                  <a href="registerCustomer.jsp" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">거래처등록/조회</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">배송처조회</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">배송처등록</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">근태조회</a>
                </div>
             <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#major2" style="width:300px;text-align: center;font-size: x-large;">영업/매출관리</button>
                <div id="major2" class="collapse">
-                  <a href="#" class="list-group-item list-group-item-action">매출</a>
-                  <a href="#" class="list-group-item list-group-item-action">급여</a>
-                  <a href="#" class="list-group-item list-group-item-action">휴가</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">매출</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">급여</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">휴가</a>
                </div>
             <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#major3" style="width:300px;text-align: center;font-size: x-large;">0000관리</button>
                <div id="major3" class="collapse">
-                  <a href="#" class="list-group-item list-group-item-action">ㅁㅁ</a>
-                  <a href="#" class="list-group-item list-group-item-action">ㅂㅂ</a>
-                  <a href="#" class="list-group-item list-group-item-action">ㄱㄱ</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">ㅁㅁ</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">ㅂㅂ</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color:#434a57; color:#FFFFFF">ㄱㄱ</a>
                </div>
             </div>
          </ul> 
@@ -124,29 +132,26 @@ form.example::after {
   	</div>
   </div>
   <div class="col-sm-9">
-  <!-- ========================================생산품 조회 영역================================= -->
+  <!-- ========================================생산품 상세조회 영역================================= -->
   <div class="row">
-  	<h2>생산품 입고 등록 조회 </h2>
-  	<table class="proc_add">  		
-  			<td>지시일자</td>
-  			<td id="proc_add" style="width:200px; height:35px;">품목<form class="example" action="/pro_search.jsp" id="proc_add">
-	  				<input type="text" class="search">
-	  				<button type="submit"><i class="fa fa-search" value="\f128;"></i></button>
-				   </form> 		
-			</td>
-  			<td>입고일</td>
-  			<td>공정</td>		
-  	</table>
+  	<h2>생산품 검색</h2>
+		<select>
+		  <option value="receipt">입고일자</option>
+		  <option value="product">생산품명</option>
+		  <option value="fishboat">어선명</option>
+		</select>  	
   </div>
-  <!-- =======================================생산품 조회 영역 끝================================= -->
-  <!-- =======================================생산품 등록 영역 ================================= -->
+  <!-- =======================================생산품 상세조회 영역 끝================================= -->
+  <!-- =======================================생산품 조회 영역 ================================= -->
   <div class="row">
   	<div class="col-sm-6">
-		<table>
+  		<!-- 429*328 -->
+		<table style="width:100%; height:180px;">
 			<tr>
 				<th></th>
 				<th>
-				<div>
+				<div class="checkbox checkbox-primary">
+				<input id="checkbox" type="checkbox" check>
 				</div>
 				</th>
 				<th>지시일자</th>
@@ -157,6 +162,9 @@ form.example::after {
 			<tr>
 				<td></td>
 				<td>
+				<div class="checkbox checkbox-primary">
+				<input id="checkbox" type="checkbox" check>
+				</div>
 				</td>
 				<td>2019-09-03</td>
 				<td>QRS20190903</td>
@@ -166,6 +174,9 @@ form.example::after {
 			<tr>
 				<td></td>
 				<td>
+				<div class="checkbox checkbox-primary">
+				<input id="checkbox" type="checkbox" check>
+				</div>
 				</td>
 				<td>2019-09-04</td>
 				<td>QRS20190904</td>
@@ -175,6 +186,9 @@ form.example::after {
 			<tr>
 				<td></td>
 				<td>
+				<div class="checkbox checkbox-primary">
+				<input id="checkbox" type="checkbox" check>
+				</div>
 				</td>
 				<td>2019-09-05</td>
 				<td>QRS20190905</td>
@@ -184,6 +198,9 @@ form.example::after {
 			<tr>
 				<td></td>
 				<td>
+				<div class="checkbox checkbox-primary">
+				<input id="checkbox" type="checkbox" check>
+				</div>
 				</td>
 				<td>2019-09-06</td>
 				<td>QRS20190906</td>
@@ -192,60 +209,62 @@ form.example::after {
 			</tr>
 		</table>
   	</div>
-  <!-- =======================================생산품 등록 영역 끝================================= -->
-  <!-- =======================================생산품 상세보기/등록 영역================================= -->
+  <!-- =======================================생산품 조회 영역 끝================================= -->
+  <!-- =======================================생산품 상세보기 영역================================= -->
   	<div class="col-sm-6">
   		<table class="table" style="width:100%; height:180px;">
-		  <tr>
-			<th colspan="2" style="background-color: black;color: aliceblue; text-align:center;">거래처 등록</th>  	
-		  </tr>
-		  <tr>
-		    <td style="width:100%;">입고일자</td>
-		    <td><input type="cli_code" class="form-control" id="cli_code" name="cli_code" style="width:120px; height:35px;"></td>
-		  </tr>
-		  <tr>
-		    <td style="width:200px;">작업지시</td>
-		    <td><input type="client" class="form-control" id="client" name="client" style="width:250px; height:35px;"></td>
-		  </tr>
-		  <tr>
-		    <td style="width:200px;">품목코드</td>
-		    <td> <input class="form-control" id="com_num" name="com_num" style="width:120px; height:35px;"></td>
-		  </tr>
-		  <tr>
-		    <td style="width:200px;">품명</td>
-		    <td><input type="ceo_name" class="form-control" id="ceo_name" name="ceo_name" style="width:120px; height:35px;"></td>
-		  </tr>
-		  <tr>
-		    <td style="width:200px;">지시순번</td>
-		    <td><input type="uptae" class="form-control" id="uptae" name="uptae" style="width:100px; height:35px;"></td>
-		  </tr>
-		  <tr>
-		    <td style="width:200px;">수량</td>
-		    <td>
-		    <input type="zipcode" class="form-control" id="zipcode" name="zipcode" style="width:100px; height:35px;">
-		   	<td><button type="button" id="search"/></td>
-		    </td>
-		  </tr>
-		  <tr>
-		    <td style="width:200px;">LOT</td>
-		    <td>
-		    <input type="com_address" class="form-control" id="com_address" name="com_address" style="width:300px; height:35px;">
-		    <input type="com_address2" class="form-control" id="com_address2" name="com_address2" style="width:300px; height:35px;">
-		    </td>
-		    <td></td>
-		  </tr>
-		  <tr>
-		    <td style="width:200px;">입고수량</td>
-		    <td><input type="call" class="form-control" id="call" name="call" style="width:200px; height:35px;"></td>
-		  </tr>
-		  <tr>
-		    <td style="width:200px;">입고창고?필요해?</td>
-		    <td><input type="charge" class="form-control" id="charge" name="charge" style="width:120px; height:35px;"></td>
-		  </tr>
-		    <td></td>
-		    <td><button onclick="location.href='#'" class="btn btn-dark" style="float: right;">등록</button></td>
-		  </tr>	  
-		</table>
+					  <tr>
+						<h2><th colspan="2" style="background-color: black;color: aliceblue; text-align:center;">생산품 등록</th></h2>  	
+					  </tr>
+					  <tr>
+					    <td>
+					    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">어선코드</button>
+						    <div class="dropdown-menu">
+						      <a class="dropdown-item" href="#">어선1</a>
+						      <a class="dropdown-item" href="#">어선2</a>
+						      <a class="dropdown-item" href="#">어선3</a>
+						    </div>
+					    </td>
+					    <td><input type="text" width="200px;" height="35px;" prompt="'콤보박스에서 선택한 값'"></td>
+					  </tr>
+					  <tr>
+					    <td>
+					    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">어종코드</button>
+						    <div class="dropdown-menu">
+						      <a class="dropdown-item" href="#">참치</a>
+						      <a class="dropdown-item" href="#">명태</a>
+						      <a class="dropdown-item" href="#">오징어</a>
+						    </div>
+					    </td>
+					    <td><input type="text" width="200px;" height="35px;" prompt='드랍다운에서 선택한 값'></td>
+					  </tr>
+					  <tr>
+					    <td>
+					    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">선택</button>
+						    <div class="dropdown-menu">
+						      <a class="dropdown-item" href="#">kg</a>
+						      <a class="dropdown-item" href="#">t</a>
+						      <a class="dropdown-item" href="#">오징어</a>
+						    </div>
+					    </td>
+					    <td><input type="ceo_name" class="form-control" id="ceo_name" name="ceo_name" style="width:120px; height:35px;"></td>
+					  </tr>
+					  <tr>
+					    <td style="width:200px;">입고등록일</td>
+					    <td><input type="uptae" class="form-control" id="uptae" name="uptae" style="width:100px; height:35px;"></td>
+					  </tr>
+					  <tr>
+					    <td style="width:200px;">어선코드</td>
+					    <td>
+					    <input type="zipcode" class="form-control" id="zipcode" name="zipcode" style="width:100px; height:35px;">
+					   	<td><button type="button" id="search"/></td>
+					    </td>
+					  </tr>				
+					  <tr>
+					    <td></td>
+					    <td><button onclick="location.href='#'" class="btn btn-dark" style="float: right;">등록</button></td>
+					  </tr>	  
+					</table>
   	</div>
   <!-- =======================================생산품 상세보기/등록 영역 끝================================= -->
    </div>
