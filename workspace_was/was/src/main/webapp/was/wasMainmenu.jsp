@@ -38,26 +38,26 @@
             <div class="list-group" style="width:300px; background-color: #383E49">
             <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#major" style="width:300px;text-align: center;font-size: large;">생산/품질관리</button>
                <div id="major" class="collapse">         
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">품목조회</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">재고등록</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">재고조회</a>
-                  <a href="productsAdd.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">생산품등록</a>
-                  <a href="registerCustomer.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">거래처등록/조회</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">배송처조회</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">배송처등록</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">근태조회</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">품목조회</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">재고등록</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">재고조회</a>
+                  <a href="productsAdd.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">생산품등록</a>
+                  <a href="registerCustomer.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">거래처등록/조회</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">배송처조회</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">배송처등록</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">근태조회</a>
                </div>
             <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#major2" style="width:300px;text-align: center;font-size: large;">영업/매출관리</button>
                <div id="major2" class="collapse">
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">매출</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">급여</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">휴가</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">매출</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">급여</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">휴가</a>
                </div>
             <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#major3" style="width:300px;text-align: center;font-size: large;">0000관리</button>
                <div id="major3" class="collapse">
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">ㅁㅁ</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">ㅂㅂ</a>
-                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF">ㄱㄱ</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">ㅁㅁ</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">ㅂㅂ</a>
+                  <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">ㄱㄱ</a>
                </div>
             </div>
          </ul> 
