@@ -9,7 +9,7 @@
 
       <div class="row">
           <div>
-              <a href="index.jsp" width="320px"><img src="/sample/images/logo.png" style="width: 320px; max-width: 760px; vertical-align: middle"></a>   
+              <a href="index.jsp" width="320px"><img src="/erp/images/logo.png" style="width: 320px; max-width: 760px; vertical-align: middle"></a>   
            </div>
       </div>
        <div class="row">
