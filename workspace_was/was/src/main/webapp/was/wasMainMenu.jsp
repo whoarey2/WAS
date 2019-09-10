@@ -5,22 +5,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="text/html;">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-<title>Insert title here</title>
-<style type="text/css">
-   .col-sm-3{
-   }
-</style>
+<%@ include file="/common/bootStrap4.jsp" %>
+<title>WAS, AQUA</title>
 </head>
 <body>
 <div class="row">
    <div class="col-sm-3">
+<<<<<<< HEAD
       <div class="row">
           <div>
               <a href="wasMainMenu.jsp" width="300px"><img src="/erp/images/logo.png" style="width: 300px; max-width: 760px; vertical-align: middle"></a>   
@@ -63,6 +54,9 @@
          </ul> 
     </div>
      </div>
+=======
+      <%@ include file="/common/MenuCommon.jsp" %>
+>>>>>>> origin/master
   </div>
    <div class="col-sm-9">
    <div class="row" style="height: 100px;"></div>
