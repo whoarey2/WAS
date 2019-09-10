@@ -17,9 +17,18 @@ import org.apache.log4j.Logger;
 public class HashMapBinder {
 	Logger logger = Logger.getLogger(HashMapBinder.class);
 	HttpServletRequest req = null;
+	String gap = null;
 	//req객체를 서블릿에서 받아와야 하니깐....
-	public HashMapBinder(HttpServletRequest req) {
+	public HashMapBinder(HttpServletRequest req, String gap) {
 		this.req = req;
+		this.gap = gap;
+	}
+	public void selectBind(Map<String,Object> target) {
+		if("0".equals(gap)) {
+			bind(target);
+		}else if("1".equals(gap)) {
+			bindPost(target);
+		}
 	}
 	//get방식으로 요청시 사용할 것.
 	/****************************************************************
@@ -33,21 +42,9 @@ public class HashMapBinder {
 		target.clear();
 		Enumeration er = req.getParameterNames();
 		while(er.hasMoreElements()) {
-			String name = (String)er.nextElement();//name,addr,pet
+			String name = (String)er.nextElement();//name,addr,pet		
+			target.put(name,req.getParameter(name));//Tomcat server.xml에서 UTF-8설정함
 			
-			if("pet".equals(name)) {
-				String values[] = req.getParameterValues(name);
-				String myPet = "";
-				if(values!=null) {
-					for(int i=0;i<values.length;i++) {
-						myPet+=values[i]+" ";
-					}
-					target.put("pet",HangulConversion.toUTF(myPet));
-				}
-			}
-			else {				
-				target.put(name,req.getParameter(name));//Tomcat server.xml에서 UTF-8설정함
-			}
 		}
 	}
 	//post방식으로 요청시 사용할 것. - 한글처리 인코딩 타입은 UTF-8 로 하였음.

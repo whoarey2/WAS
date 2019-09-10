@@ -1,8 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
-<%
-String result =
-			(String)request.getAttribute("result");
-%>    
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -164,8 +160,8 @@ $("#chartContainer").CanvasJSChart(options);
 			<div class="card" style="width:350px">
 			<img class="card-img-top" src="/erp/images/통모짜.jpg" alt="Card image" style="width:350px">
 				<div class="card-body">
-					<h4 class="card-title">${result}</h4>
-					<p class="card-text">마지막 접속시간:</p>
+					<h4 class="card-title">${msg}</h4>
+					<p class="card-text">마지막 접속시간: ${outtime}</p>
 					<a href="#" class="btn btn-primary">내 정보 보기</a>
 				</div>
 			</div>

@@ -1,5 +1,6 @@
 package com.was.erp;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,26 @@ public class ErpLogic {
 
 	public void empSignUp(Map<String, Object> pMap) {
 		erpDao.empSignUp(pMap);
+	}
+
+	public void productShipIn(Map<String, Object> pMap) {
+		erpDao.productShipIn(pMap);
+		
+	}
+
+	public void productShipOut(Map<String, Object> pMap) {
+		erpDao.productShipOut(pMap);
+		
+	}
+
+	public void productInsert(Map<String, Object> pMap) {
+		erpDao.productInsert(pMap);
+		
+	}
+
+	public List<Map<String, Object>> productList(Map<String, Object> pMap) {
+		List<Map<String,Object>> rList = erpDao.productList(pMap);
+		return rList;
 	}
 
 }
