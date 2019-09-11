@@ -19,6 +19,7 @@ public class ErpDao {
 	}
 ///////////////////////////////EMP////////////////////////////////	
 	public void empLogin(Map<String, Object> pMap) {
+		logger.info("SQL문:::::::::::::::::::");
 		pMap.put("msg", "0");
 		pMap.put("outtime", "0");
 		try {
@@ -29,7 +30,6 @@ public class ErpDao {
 		} finally {
 			sqlSession.close();
 		}
-		
 	}
 	public void empSignUp(Map<String, Object> pMap) {
 		pMap.put("msg", "0");

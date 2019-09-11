@@ -32,15 +32,21 @@ public class EmpController implements ActionServlet {
 		if("empLogin".equals(mapping)) {
 			List<Map<String,Object>> rList = erpLogic.empLogin(pMap);
 			model.setAddAttribute(rList);
-			model.setViewName("main");
-			model.setViewPath("views");
-			model.setViewExtension("jsp");
+			if(!"존재하지 않는 사원코드입니다..".equals(rList.get(0).get("msg"))) {
+				model.setViewName("main");
+				model.setViewPath("WEB-INF/views/was/");
+				model.setViewExtension("jsp");
+			}else{
+				model.setViewName("index");
+				model.setViewPath("");
+				model.setViewExtension("jsp");
+			}
 		}
 		else if("empSignUp".equals(mapping)) {
 			List<Map<String,Object>> rList = erpLogic.empSignUp(pMap);
 			model.setAddAttribute(rList);
 			model.setViewName("main");
-			model.setViewPath("views");
+			model.setViewPath("WEB-INF/views/was/");
 			model.setViewExtension("jsp");
 		}
 		return model;
