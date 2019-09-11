@@ -15,21 +15,29 @@ public class ErpDao {
 	public ErpDao() {
 		sqlSessionFactory = MybatisCommonFactory.getSqlSeesionFactory();
 	}
-	public String erpLogin(Map<String, Object> pMap) {
-		String result="";
+	public void empLogin(Map<String, Object> pMap) {
 		pMap.put("msg", "0");
 		pMap.put("outtime", "0");
 		try {
 			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.selectOne("erpLogin", pMap);
+			sqlSession.selectOne("empLogin", pMap);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
-		result = pMap.get("msg").toString();	
-		logger.info("erpLogin.result : "+result);
-		return result;
+		
+	}
+	public void empSignUp(Map<String, Object> pMap) {
+		pMap.put("msg", "0");
+		try {
+			sqlSession = sqlSessionFactory.openSession();
+			sqlSession.selectOne("empSignUp", pMap);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
 	}
 
 }
