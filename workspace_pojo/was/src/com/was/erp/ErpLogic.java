@@ -11,7 +11,7 @@ public class ErpLogic {
 	public ErpLogic() {
 		erpDao = new ErpDao();
 	}
-	
+///////////////////////////////////////EMP//////////////////////////////////////////	
 	public List<Map<String, Object>> empLogin(Map<String, Object> pMap) {
 		erpDao.empLogin(pMap);
 		List<Map<String,Object>> rList = new ArrayList<>();
@@ -34,5 +34,43 @@ public class ErpLogic {
 		}
 		return rList;
 	}
+///////////////////////////////////////EMP//////////////////////////////////////////
+/////////////////////////////////////product////////////////////////////////////////	
+	public List<Map<String, Object>> productInsert(Map<String, Object> pMap) {
+		int result = 0;
+		Map<String,Object> rMap = new HashMap<>();
+		List<Map<String,Object>> rList = new ArrayList<>();
+		result = erpDao.productInsert(pMap);
+		if(result==1) {
+			String msg ="등록성공";
+			rMap.put("msg", msg);
+			rList.add(rMap);
+		}else if(result==0) {
+			String msg ="등록실패";
+			rMap.put("msg", msg);
+			rList.add(rMap);
+		}
+		return rList;
+	}
+	public List<Map<String, Object>> productList(Map<String, Object> pMap) {
+		Map<String,Object> rMap = new HashMap<>();
+		List<Map<String,Object>> rList = new ArrayList<>();
+		rList = erpDao.productList(pMap);
+		return rList;
+	}
+
+	public List<Map<String, Object>> productShipOut(Map<String, Object> pMap) {
+		Map<String,Object> rMap = new HashMap<>();
+		List<Map<String,Object>> rList = new ArrayList<>();
+		erpDao.productShipOut(pMap);
+		return rList;
+	}
+	public List<Map<String, Object>> productShipIn(Map<String, Object> pMap) {
+		Map<String,Object> rMap = new HashMap<>();
+		List<Map<String,Object>> rList = new ArrayList<>();
+		erpDao.productShipIn(pMap);
+		return rList;
+	}
+/////////////////////////////////////product////////////////////////////////////////
 
 }

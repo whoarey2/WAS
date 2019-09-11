@@ -29,5 +29,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/mybatis/mapper/emp.xml" />
+		<mapper resource="com/mybatis/mapper/product.xml" />
 	</mappers>
 </configuration> 

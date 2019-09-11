@@ -11,11 +11,13 @@ import com.util.UriMapping;
 
 public class ControllerMapping {
 	private static final Logger logger = Logger.getLogger(ControllerMapping.class);
-	public static ActionServlet mapping(HttpServletRequest req, HttpServletResponse res, Map<String, Object> pMap) {
+	public static ActionServlet mapping(String mapping,Map<String, Object> pMap) {
 		ActionServlet aServlet=null;
-		String mapping = UriMapping.getMapping(req.getRequestURI());
 		if(mapping.indexOf("emp")>-1) {
 			aServlet = new EmpController(pMap,mapping);
+		}
+		else if(mapping.indexOf("product")>-1) {
+			aServlet = new ProductController(pMap,mapping);
 		}
 		return aServlet;
 	}
