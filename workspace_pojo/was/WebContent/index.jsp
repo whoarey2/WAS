@@ -1,4 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ page import="java.util.List, java.util.Map" %>   
+<%
+List<Map<String,Object>> rList =
+	(List<Map<String,Object>>)request.getAttribute("rList");
+	String msg = null;
+	if(rList!=null){
+		Map<String,Object> rMap = rList.get(0);
+		msg = rMap.get("msg").toString();
+	}
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,7 +21,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 html,body{
-background-image: url('/erp/images/11.jpg');
+background-image: url('/erp/images/ocean.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -112,7 +122,8 @@ function submitFuction(){
 				</div>
 			</div>
 			<div class="card-body">
-				<form action="/erp/empLogin.was">
+				<form action="/erp/empLogin.was" method="post">
+					<input type="hidden" value="1" name="gap">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -128,6 +139,13 @@ function submitFuction(){
 					</div>
 					<div class="form-group">
 						<input type="submit" value="로그인" class="btn float-right login_btn">
+					</div>
+					<div>
+					<%
+						if(msg!=null){
+							out.print(msg);
+						}
+					%>
 					</div>
 				</form>
 			</div>

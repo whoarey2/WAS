@@ -5,14 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 
 public class ErpLogic {
+	Logger logger = Logger.getLogger(ErpLogic.class);
 	ErpDao erpDao;
 	public ErpLogic() {
 		erpDao = new ErpDao();
 	}
 ///////////////////////////////////////EMP//////////////////////////////////////////	
 	public List<Map<String, Object>> empLogin(Map<String, Object> pMap) {
+		logger.info("empLogin:::::::::::::::::::");
 		erpDao.empLogin(pMap);
 		List<Map<String,Object>> rList = new ArrayList<>();
 		if(pMap.get("msg") != null) {

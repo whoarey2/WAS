@@ -40,7 +40,7 @@ public class ProductController {
 		erpLogic.productInsert(pMap);
 		return "";//190910 이메소드는 아직 수정 중 입니다.
 	}
-	@GetMapping(value="/productInsert")
+	@GetMapping(value="/productList")
 	public String productList(@RequestParam Map<String,Object> pMap,Model model) {
 		logger.info("productList 메소드 호출 성공");
 		List<Map<String,Object>> rList = erpLogic.productList(pMap);
