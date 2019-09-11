@@ -19,6 +19,10 @@ public class ErpDao {
 	}
 ///////////////////////////////EMP////////////////////////////////	
 	public void empLogin(Map<String, Object> pMap) {
+		logger.info("emono : "+pMap.get("empno"));
+		logger.info("emp_pw : "+pMap.get("emp_pw"));
+		logger.info("msg : "+pMap.get("msg"));
+		logger.info("outtime : "+pMap.get("outtime"));
 		logger.info("SQL문:::::::::::::::::::");
 		pMap.put("msg", "0");
 		pMap.put("outtime", "0");
