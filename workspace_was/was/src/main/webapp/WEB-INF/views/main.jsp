@@ -204,7 +204,7 @@ $("#chartContainer").CanvasJSChart(options);
 		</div>
 		<div class="row">			
 			<div class="col-sm-6">
-				<%@ include file="/was/calendar3.jsp" %>
+				<%@ include file="./was/calendar3.jsp" %>
 			</div>
 			<div class="col-sm-6">
 				<div id="notice" style="width: 750px; height: 500px;">
