@@ -1,5 +1,6 @@
 package com.was.erp;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.javassist.NotFoundException;
@@ -22,6 +23,24 @@ public class ErpDao {
 	public void empSignUp(Map<String, Object> pMap) {
 		pMap.put("msg", "");
 		sqlSessionTemplate.selectOne("empSignUp", pMap);
+	}
+	public void productShipIn(Map<String, Object> pMap) {
+		pMap.put("msg", "");
+		sqlSessionTemplate.selectOne("productShipIn", pMap);
+	}
+	public void productShipOut(Map<String, Object> pMap) {
+		pMap.put("msg", "");
+		sqlSessionTemplate.selectOne("productShipOut",pMap);
+		
+	}
+	public void productInsert(Map<String, Object> pMap) {
+		sqlSessionTemplate.selectOne("productInsert",pMap);
+
+	}
+	public List<Map<String, Object>> productList(Map<String, Object> pMap) {
+		List<Map<String,Object>> rList
+			= sqlSessionTemplate.selectList("productList",pMap);
+		return rList;
 	}
 
 }
