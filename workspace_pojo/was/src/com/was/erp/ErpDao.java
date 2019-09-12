@@ -23,7 +23,7 @@ public class ErpDao {
 		logger.info("emp_pw : "+pMap.get("emp_pw"));
 		logger.info("msg : "+pMap.get("msg"));
 		logger.info("outtime : "+pMap.get("outtime"));
-		logger.info("SQL문:::::::::::::::::::");
+		logger.info("SQL문::::::::::::시작전:::::::");
 		pMap.put("msg", "0");
 		pMap.put("outtime", "0");
 		try {
@@ -34,6 +34,8 @@ public class ErpDao {
 		} finally {
 			sqlSession.close();
 		}
+		logger.info("outtime:"+pMap.get("outtime"));
+		logger.info("SQL문::::::::::::끝:::::::");
 	}
 	public void empSignUp(Map<String, Object> pMap) {
 		pMap.put("msg", "0");
@@ -61,6 +63,7 @@ public class ErpDao {
 		return result;
 	}
 	public List<Map<String, Object>> productList(Map<String, Object> pMap) {
+		logger.info("productList:::::::::::sql문실행전:::::::::::::");
 		List<Map<String,Object>> rList = new ArrayList<>();
 		try {
 			sqlSession = sqlSessionFactory.openSession();
@@ -70,6 +73,7 @@ public class ErpDao {
 		} finally {
 			sqlSession.close();
 		}
+		logger.info("productList:::::::::::sql문실행후:::::::::::::");
 		return rList;
 	}
 	public void productShipOut(Map<String, Object> pMap) {

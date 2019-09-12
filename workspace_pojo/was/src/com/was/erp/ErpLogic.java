@@ -57,7 +57,6 @@ public class ErpLogic {
 		return rList;
 	}
 	public List<Map<String, Object>> productList(Map<String, Object> pMap) {
-		Map<String,Object> rMap = new HashMap<>();
 		List<Map<String,Object>> rList = new ArrayList<>();
 		rList = erpDao.productList(pMap);
 		return rList;

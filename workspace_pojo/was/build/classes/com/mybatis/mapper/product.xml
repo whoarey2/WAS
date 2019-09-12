@@ -14,6 +14,7 @@
             )
     </insert>
     <select id="productList" parameterType="map" resultType="map">
-    	select 
+    	select pd_no, pd_weight, pd_regdate, ship_code, fish_code
+    		from product
     </select>
 </mapper> 

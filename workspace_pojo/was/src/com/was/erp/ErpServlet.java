@@ -26,10 +26,12 @@ public class ErpServlet extends HttpServlet{
 	public void doErp(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String mapping = UriMapping.getMapping(req.getRequestURI());
 		//METHOD 방식의 구분인자 하나를 정했다.
+		Map<String,Object> pMap = new HashMap<>();
+		if(req.getParameter("gap")!=null) {
 		String gap = req.getParameter("gap").toString();
 		HashMapBinder hmb = new HashMapBinder(req,gap);
-		Map<String,Object> pMap = new HashMap<>();
 		hmb.selectBind(pMap);
+		}
 		ActionServlet aServlet = ControllerMapping.mapping(mapping,pMap);
 		logger.info("컨트롤러매핑에서 컨트롤러 결정함.");
 		Model model = aServlet.execute();
