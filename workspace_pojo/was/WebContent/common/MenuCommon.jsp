@@ -14,8 +14,8 @@
       </div>
        <div class="row">
           <div style="background-color:#383E49; width:320px; height:90px; color:#FFFFFF; text-align: center;">
-             <p>반갑습니다, 사원<strong> <%= msg %></strong>님</p><!-- 저 msg는 include로 사용하는 쪽에서 선언되어있어 -->
-            <h6>최근 접속 시간은...<%=outtime %></h6>
+             <p>반갑습니다, 사원<strong> <%if(msg!=null) out.print(msg); %></strong>님</p><!-- 저 msg는 include로 사용하는 쪽에서 선언되어있어 -->
+            <h6>최근 접속 시간은...<%if(outtime!=null) out.print(outtime); %></h6>
          </div>
    </div>
    <div class="row">
