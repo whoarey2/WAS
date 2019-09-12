@@ -1,17 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.List, java.util.Map" %>    
-<%
-	List<Map<String,Object>> rList =
-				(List<Map<String,Object>>)request.getAttribute("rList");
-	String msg = null;
-	String outtime = null;
-	if(rList!=null){
-		Map<String,Object> rMap = rList.get(0);
-		msg = rMap.get("msg").toString();
-		outtime = rMap.get("outtime").toString();
-	}
-%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,9 +9,10 @@
 <title>WAS, AQUA</title>
 </head>
 <body>
+<div class="container-fluid">
 <div class="row">
    <div class="col-sm-3">
-      <%@ include file="/common/MenuCommon.jsp" %>
+       <%@ include file="/common/MenuCommon.jsp" %>
   </div>
    <div class="col-sm-9">
    <div class="row" style="height: 100px;"></div>
@@ -69,6 +58,7 @@
          </table>
       </div>
       </div>
+   </div>
    </div>
    </div>
 </body>

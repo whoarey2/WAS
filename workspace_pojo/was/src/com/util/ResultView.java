@@ -35,6 +35,16 @@ public class ResultView {
 				e.printStackTrace();
 			}
 		}
+		else if("productList".equals(mapping)) {
+			view = req.getRequestDispatcher(fullView);
+			try {
+				view.forward(req, res);
+			} catch (ServletException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		return view;
 	}
 
