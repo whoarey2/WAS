@@ -9,36 +9,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <title>생산품 등록/조회</title>
 <script type="text/javascript">
-	function change() {
-		var frm = document.frm;	
-		var combo = frm.combo;
-		var txt = frm.combo_nm;	
-		var comboVal = combo.value;	
-		for(var i=0; i<combo.options.length; i++ ) {
-			if(combo.options[i].value == comboVal ) {
-				combo.options[i].checked = true;
-				txt.value= combo.options[i].name;
-			}
-		}
-	
-	}
 
 </script>
 <style>
- 
  tr:nth-child(even) {
-	background-color: #f2f2f2;
+   background-color: #f2f2f2;
  } 
 
  #box{margin:0; padding:10px 30px 5px}
+
 	
 </style>
+
 </head>
 <body>
 <div class="container-fluid">
 <div class="row">
 	<div class="col-sm-3">
-		<%@ include file="/common/MenuCommon.jsp" %>
+		<%@ include file="../common/MenuCommon.jsp" %>
     </div>
   <div class="col-sm-9">
   <!-- ========================================생산품 상세조회 영역================================= -->
@@ -79,8 +67,8 @@
   <div class="row">
   	<div class="col-sm-6" style="margin-top: 35px;">
   		<!-- 429*328 -->
-  		<button type="button" class="btn btn-dark" style="margin-left: 10px;">선택</button>
-		<table style="margin: 11px;width: 510px;">	
+  		<button type="button" class="btn btn-dark" style="margin-left: 10px;margin-top: inherit;">선택</button>
+		<table style="margin: 11px;width: 650px;">	
 			<thead>
 			<tr style="background-color: black;color: aliceblue; text-align:center; width:300px; height:45px;">
 				<td></td>
@@ -136,59 +124,61 @@
   <!-- =======================================생산품 목록 영역 끝================================= -->
   <!-- =======================================생산품 상세보기 영역================================= -->
   	<div class="col-sm-6" style="margin-top: 35px;">
-  		<table class="table" style="width:100%; height:180px;">
-					  <tr>
-						<h2><th colspan="2" style="background-color: black;color: aliceblue; text-align:center;">생산품 등록</th></h2>  	
-					  </tr>
-					  <tr>
-					    <td>
-					    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">어선선택</button>
-						    <div class="dropdown-menu">
-						      <a class="dropdown-item" href="#">어선1</a>
-						      <a class="dropdown-item" href="#">어선2</a>
-						      <a class="dropdown-item" href="#">어선3</a>
-						    </div>
-					    </td>
-					    <td><input type="text" width="200px;" height="35px;" data-options="prompt:'선택한 어선종류 값'"></td>
-					  </tr>
-					  <tr>
-					    <td>
-					    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">어종선택</button>
-						    <div class="dropdown-menu">
-						      <a class="dropdown-item" href="#">참치</a>
-						      <a class="dropdown-item" href="#">명태</a>
-						      <a class="dropdown-item" href="#">오징어</a>
-						    </div>
-					    </td>
-					    <td><input type="text" width="200px;" height="35px;" data-options="prompt:'선택한 어종 값'"></td>
-					  </tr>
-					  <tr>
-					    <td>
-					    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">선택</button>
-					    <div class="dropdown-menu">
-					      <a class="dropdown-item" href="#">kg</a>
-					      <a class="dropdown-item" href="#">t</a>
-					    </div>
-					    </td>
-					    <td><input type="ceo_name" class="form-control" id="ceo_name" name="ceo_name" style="width:120px; height:35px;"></td>
-					  </tr>
-					  <tr>
-					    <td><button onclick="location.href='#'" class="btn btn-dark">입고등록일</button></td>
-					    <td>						  
-			               <i class="fa fa-calendar-check-o" style="font-size:24px"></i>
-			               <input type="date" id="enrollment">
-					    </td>
-					  </tr>
-					  <tr>
-					    <td><button onclick="location.href='#'" class="btn btn-dark">미정</button></td>
-					    <td>
-					   	</td>
-					  </tr>				
-					  <tr>
-					    <td></td>
-					    <td><button onclick="location.href='#'" class="btn btn-dark" style="float: right;">등록</button></td>
-					  </tr>	  
-					</table>
+  		<table class="table" style="width:100%;height:180px;margin-top: 80px;">
+			  <tr>
+				<h2><th colspan="2" style="background-color: black;color: aliceblue; text-align:center;">생산품 등록</th></h2>  	
+			  </tr>
+			  <tr>
+			    <td>
+				  <select id="fish_boat" class="form-control" align="center" space="&nbsp;" style="background-color:#343A40;width:150px;color: white;">
+					  <option value="x">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선선택</option>
+					  <option value="boat1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선명1</option>
+					  <option value="boat2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선명2</option>
+					  <option value="boat3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선명3</option>
+					  <option value="boat4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선명4</option>
+				 </select>
+			    </td>
+			    <td><input type="text" id="boat" name="boat" data-options="prompt:'선택한 어선종류 값'" style="height: 35px;"></td>
+			  </tr>
+			  <tr>
+			    <td>
+				   <select class="form-control" align="center" space="&nbsp;" style="background-color:#343A40;width:150px;color: white;">
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어종선택</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;참치</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;오징어</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;돔</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제주은갈치</option>
+					</select>
+			    </td>
+			    <td><input type="text" id="fish" name="fish" data-options="prompt:'선택한 어종 값'" style="height: 35px;"></td>
+			  </tr>
+			  <tr>
+			    <td>
+			    <select class="form-control" align="center" space="&nbsp;" style="background-color:#343A40;width:150px;color: white;">
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;무게선택</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kg</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t</option>
+					</select>
+			    </td>
+			    <td><input type="text" id="choose" name="choose" style="width:120px; height:35px;"></td>
+			  </tr>
+			  <tr>
+			    <td><button onclick="location.href='#'" class="btn btn-dark" style="width: 150px;">입고등록일</button></td>
+			    <td>						  
+	               <input type="date" id="enrollment" name="enrollment" style="height: 35px;">
+	               <i class="fa fa-calendar-check-o" style="font-size:24px"></i>
+			    </td>
+			  </tr>
+			  <tr>
+			    <td><button onclick="location.href='#'" class="btn btn-dark" style="width: 150px; text-align:center;">미정</button></td>
+			    <td>
+			   	</td>
+			  </tr>				
+			  <tr>
+			    <td></td>
+			    <td><button onclick="location.href='#'" class="btn btn-dark" style="float: right;">등록</button></td>
+			  </tr>	  
+			</table>
   	</div>
   <!-- =======================================생산품 상세보기/등록 영역 끝================================= -->
    </div>
