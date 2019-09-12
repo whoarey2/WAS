@@ -9,7 +9,7 @@
 
       <div class="row">
           <div>
-              <a href="index.jsp" width="320px"><img src="../../logo.png" style="width: 320px; max-width: 760px; vertical-align: middle"></a>   
+              <a href="index.jsp" width="320px"><img src="/erp/images/logo.png" style="width: 320px; max-width: 760px; vertical-align: middle"></a>   
            </div>
       </div>
        <div class="row">
@@ -27,7 +27,7 @@
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">품목조회</a>
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">재고등록</a>
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">재고조회</a>
-                  <a href="productsAdd.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">생산품등록</a>
+                  <a href="productsAdd.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">생산품등록/조회</a>
                   <a href="registerCustomer.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">거래처등록/조회</a>
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">배송처조회</a>
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">배송처등록</a>
