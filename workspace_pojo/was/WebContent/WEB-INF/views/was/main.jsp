@@ -5,9 +5,11 @@
 	List<Map<String,Object>> rList =
 				(List<Map<String,Object>>)request.getAttribute("rList");
 	String msg = null;
+	String outtime = null;
 	if(rList!=null){
 		Map<String,Object> rMap = rList.get(0);
 		msg = rMap.get("msg").toString();
+		outtime = rMap.get("outtime").toString();
 	}
 %>
 <!DOCTYPE html>
