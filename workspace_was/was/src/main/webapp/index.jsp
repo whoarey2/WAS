@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
+<%@ page import="java.util.List, java.util.Map" %>   
+<%
+	
+	String msg = (String)request.getAttribute("msg");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -112,7 +117,8 @@ function submitFuction(){
 				</div>
 			</div>
 			<div class="card-body">
-				<form action="/erp/emplogin.was" method="post">
+				<form action="/erp/empLogin.was" method="post">
+					<input type="hidden" value="1" name="gap">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -128,6 +134,13 @@ function submitFuction(){
 					</div>
 					<div class="form-group">
 						<input type="submit" value="로그인" class="btn float-right login_btn">
+					</div>
+					<div>
+					<%
+						if(msg!=null){
+							out.print(msg);
+						}
+					%>
 					</div>
 				</form>
 			</div>

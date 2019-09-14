@@ -20,18 +20,22 @@ public class EmpController {
 	private static final Logger logger = LoggerFactory.getLogger(EmpController.class);
 	@Autowired
 	ErpLogic erpLogic;
-	@PostMapping("emplogin.was")
+	@PostMapping("empLogin.was")
 	public String empLogin(@RequestParam Map<String,Object> pMap,Model model) {
 		logger.info("empLogin 호출 성공");
 		erpLogic.empLogin(pMap);
 		String path = "";
-		if("존재하지 않는 사원코드입니다..".equals(pMap.get("msg").toString())) {
-			path ="fail";
+		String result = pMap.get("msg").toString();
+		if("존재하지 않는 사원코드입니다..".equals(result) || "비밀번호를 다시 확인하세요".equals(result)) {
+			path ="forward:index.jsp";
+			model.addAttribute("msg", pMap.get("msg").toString());
+		}else{
 			model.addAttribute("msg", pMap.get("msg").toString());
 			//model.addAttribute("outtime", pMap.get("outtime").toString());
+			path ="login/main";
 		}
 		logger.info("msg :"+pMap.get("msg").toString());
-		return "main";//190909 이메소드는 아직 수정 중 입니다.
+		return path;//190909 이메소드는 아직 수정 중 입니다.
 	}
 	@PostMapping("empSignUp.was")
 	public String empSignUp(@RequestParam Map<String,Object> pMap,Model model) {
