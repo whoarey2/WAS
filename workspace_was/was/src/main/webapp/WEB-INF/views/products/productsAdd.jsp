@@ -30,7 +30,7 @@
 		<%@ include file="/common/MenuCommon.jsp" %>
 =======
 	<div class="col-sm-3">
-		<%@ include file="../common/MenuCommon.jsp" %>
+		<%@ include file="/common/MenuCommon.jsp" %>
 >>>>>>> origin/master
     </div>
   <div style="width:80%">
