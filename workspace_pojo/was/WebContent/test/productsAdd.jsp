@@ -9,20 +9,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <title>생산품 등록/조회</title>
 <script type="text/javascript">
-	function change() {
-		var frm = document.frm;	
-		var combo = frm.combo;
-		var txt = frm.combo_nm;	
-		var comboVal = combo.value;	
-		for(var i=0; i<combo.options.length; i++ ) {
-			if(combo.options[i].value == comboVal ) {
-				combo.options[i].checked = true;
-				txt.value= combo.options[i].name;
-			}
-		}
-	
-	}
-	
 
 </script>
 <style>
@@ -31,16 +17,16 @@
  } 
 
  #box{margin:0; padding:10px 30px 5px}
-	
-  button	
+
 	
 </style>
+
 </head>
 <body>
 <div class="container-fluid">
 <div class="row">
 	<div class="col-sm-3">
-		<%@ include file="/common/MenuCommon.jsp" %>
+		<%@ include file="../common/MenuCommon.jsp" %>
     </div>
   <div class="col-sm-9">
   <!-- ========================================생산품 상세조회 영역================================= -->
@@ -144,58 +130,47 @@
 			  </tr>
 			  <tr>
 			    <td>
-				  <select  id="fish_boat" class="form-control" style="background-color:#343A40;width:100px;color: white;">
-					  <option>어선선택</option>
-					  <option>어선명2</option>
-					  <option>어선명3</option>
-					  <option>어선명4</option>
-					  <option>어선명5</option>
+				  <select id="fish_boat" class="form-control" align="center" space="&nbsp;" style="background-color:#343A40;width:150px;color: white;">
+					  <option value="x">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선선택</option>
+					  <option value="boat1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선명1</option>
+					  <option value="boat2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선명2</option>
+					  <option value="boat3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선명3</option>
+					  <option value="boat4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어선명4</option>
 				 </select>
 			    </td>
 			    <td><input type="text" id="boat" name="boat" data-options="prompt:'선택한 어선종류 값'" style="height: 35px;"></td>
 			  </tr>
 			  <tr>
 			    <td>
-			    <!-- <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" style="width: 100px;">어종선택</button>
-				    <div class="dropdown-menu">
-				      <a class="dropdown-item" href="#">참치</a>
-				      <a class="dropdown-item" href="#">명태</a>
-				      <a class="dropdown-item" href="#">오징어</a>
-				    </div> -->
-				   <select class="form-control" style="background-color:#343A40;width:100px;color: white;">
-					  <option>어종선택</option>
-					  <option>참치</option>
-					  <option>오징어</option>
-					  <option>돔</option>
-					  <option>제주은갈치</option>
+				   <select class="form-control" align="center" space="&nbsp;" style="background-color:#343A40;width:150px;color: white;">
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;어종선택</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;참치</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;오징어</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;돔</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제주은갈치</option>
 					</select>
 			    </td>
 			    <td><input type="text" id="fish" name="fish" data-options="prompt:'선택한 어종 값'" style="height: 35px;"></td>
 			  </tr>
 			  <tr>
 			    <td>
-			    <!-- <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" style="width: 100px;">선택</button>
-			    <div class="dropdown-menu">
-			      <a class="dropdown-item" href="#">kg</a>
-			      <a class="dropdown-item" href="#">t</a>
-			    </div> -->
-			    <select class="form-control" style="background-color:#343A40;width:100px;color: white;">
-					  <option>무게선택</option>
-					  <option>kg</option>
-					  <option>t</option>
+			    <select class="form-control" align="center" space="&nbsp;" style="background-color:#343A40;width:150px;color: white;">
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;무게선택</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kg</option>
+					  <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t</option>
 					</select>
 			    </td>
 			    <td><input type="text" id="choose" name="choose" style="width:120px; height:35px;"></td>
 			  </tr>
 			  <tr>
-			    <td><button onclick="location.href='#'" class="btn btn-dark" style="width: 100px;">입고등록일</button></td>
+			    <td><button onclick="location.href='#'" class="btn btn-dark" style="width: 150px;">입고등록일</button></td>
 			    <td>						  
 	               <input type="date" id="enrollment" name="enrollment" style="height: 35px;">
 	               <i class="fa fa-calendar-check-o" style="font-size:24px"></i>
 			    </td>
 			  </tr>
 			  <tr>
-			    <td><button onclick="location.href='#'" class="btn btn-dark" style="width: 100px;">미정</button></td>
+			    <td><button onclick="location.href='#'" class="btn btn-dark" style="width: 150px; text-align:center;">미정</button></td>
 			    <td>
 			   	</td>
 			  </tr>				
