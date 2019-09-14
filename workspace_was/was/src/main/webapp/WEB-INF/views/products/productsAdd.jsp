@@ -37,10 +37,10 @@
 <body>
 <div class="container-fluid">
 <div class="row">
-	<div class="col-sm-3">
+	<div style="width:20%">
 		<%@ include file="/common/MenuCommon.jsp" %>
     </div>
-  <div class="col-sm-9">
+  <div style="width:80%">
   <!-- ========================================생산품 상세조회 영역================================= -->
   <div class="w3-container w3-light-gray" style=" margin-top: 25px; height: 60px;">
   <div class="box-container">

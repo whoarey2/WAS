@@ -10,10 +10,10 @@
 <body>
 <div class="container-fluid ">
 <div class="row">
-<div class="col-sm-3">
+<div style="width:20%">
 	 <%@ include file="/common/MenuCommon.jsp" %> <!-- <<메뉴는 얘 데려가서 쓰면 됨.  -->
 </div>
-<div class="col-sm-9">
+<div style="width:80%">
 <!--  아래 코드가 업무명 쓰는 블랙바  -->
 <div class="card bg-dark text-white" style="height:50px; margin-top:70px">
     <div class="card-body">사원목록</div>
