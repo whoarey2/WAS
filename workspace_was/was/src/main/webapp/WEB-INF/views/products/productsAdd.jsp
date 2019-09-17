@@ -27,6 +27,13 @@
 <div class="row">
 	<div style="width:20%">
 		<%@ include file="/common/MenuCommon.jsp" %>
+<<<<<<< HEAD
+=======
+=======
+	<div class="col-sm-3">
+		<%@ include file="/common/MenuCommon.jsp" %>
+>>>>>>> origin/master
+>>>>>>> origin/master
     </div>
   <div style="width:80%">
   <!-- ========================================생산품 상세조회 영역================================= -->
