@@ -1,0 +1,24 @@
+git fetch origin master //마스터에 있는걸 최신화 하는 작업 아직 다운전 정보만 갖고 있음
+
+<<<<<<<<<<<<<<<<< 내 git 폴더에 변화가 있을 때(log담기는 애 있다던가)
+git add. //내걸 git상에 올릴걸 준비 
+
+git commit -m"dfdff" //여기서 등록
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+git checkout master //  내 마스터로 넘어감 각자 마스터가 다름
+
+git merge origin/master 원격의 최신걸 내 로컬마스터로 땡겨옴
+
+git merge 1sinjn// 내 브런치올린 정보를 내 로컬마스터로 땡겨옴
+
+git push origin master
+
+(보류)git commit -m"sdf" // 내마스터에서 올릴거 등록(나 할일 끝났다)
+
+git checkout 1sinjn 내 브런치로 이동
+
+git merge master 내 마스터의 최신 정보를 내 로컬로 가져옴
+
+-----------------------
+pull(fetch+merge)
+commit 등록+나 일 끝났다
