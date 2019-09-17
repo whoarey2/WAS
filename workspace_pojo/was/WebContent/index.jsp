@@ -3,10 +3,10 @@
 <%
 List<Map<String,Object>> rList =
 	(List<Map<String,Object>>)request.getAttribute("rList");
-	String msg = null;
+	String emp_name = null;
 	if(rList!=null){
 		Map<String,Object> rMap = rList.get(0);
-		msg = rMap.get("msg").toString();
+		emp_name = rMap.get("emp_name").toString();
 	}
 %>
 <!DOCTYPE html>
@@ -142,8 +142,8 @@ function submitFuction(){
 					</div>
 					<div>
 					<%
-						if(msg!=null){
-							out.print(msg);
+						if(emp_name!=null){
+							out.print(emp_name);
 						}
 					%>
 					</div>

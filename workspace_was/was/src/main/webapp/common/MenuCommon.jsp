@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <!-- 190917 -->
 <%
 //////////////////쿠키에 담기기 전에 일회용성 변수/////////////
 	String emp_name = null;
@@ -49,6 +50,7 @@
 	  %>
 					<input type="hidden" value=<%= s_emp_no %> name="empno">
 					<input type="hidden" value=<%= s_emp_pw %> name="emp_pw">
+					<input type="hidden" value="1" name="gap">
 	  <%
 	  	}
 	  %>

@@ -26,7 +26,7 @@
 <div class="container-fluid">
 <div class="row">
 	<div class="col-sm-3">
-		<%@ include file="../common/MenuCommon.jsp" %>
+		<%@ include file="/common/MenuCommon.jsp" %>
     </div>
   <div class="col-sm-9">
   <!-- ========================================생산품 상세조회 영역================================= -->
