@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -30,6 +30,11 @@
 			$("#adrr2").val(adrr2);
 			
 			
+		}
+		function addAction(){
+			$("#f_empAdd").attr("method","post");
+			$("#f_empAdd").attr("action","/erp/Emp/empAdd.was");
+			$("#f_empAdd").submit();
 		}
 	</script>
 </head>
@@ -138,31 +143,34 @@
  <div class="card bg-dark text-white" style="height:50px; margin-top:70px">
     <div class="card-body">사원등록</div>
   </div>
+  <form id="f_empAdd">
   <table class="table table-striped">
 	<tr>
 		<td style="width:17%"><button onclick="location.href='#'" class="btn btn-dark">&nbsp;사원명&nbsp;</button></td>
 		<td align="left" colspan="3">
-			<input type="text" class="form-control" style="height:35px;width:130px;" placeholder="&nbsp;사원명">
+			<input type="text" class="form-control" style="height:35px;width:130px;" placeholder="&nbsp;사원명" name="emp_name">
 		</td>
 	</tr>
 	<tr>
 		<td style="width:17%"><button class="btn btn-dark">영문성명</button></td>
 		<td align="left" colspan="3">
-			<input type="text" class="form-control" style="height:35px;width:130px;" placeholder="&nbsp;영문성명">
+			<input type="text" class="form-control" style="height:35px;width:130px;" placeholder="&nbsp;영문성명" name="emp_engname">
 		</td>
 	</tr>
 	<tr>
 		<td style="width:17%"><button class="btn btn-dark">주민번호</button></td>
 		<td align="left" colspan="3">
-			<input type="text" class="form-control" style="height:35px;width:150px;display:inline-block" placeholder="&nbsp;주민등록번호">
+			<input type="text" class="form-control" style="height:35px;width:150px;display:inline-block" 
+					placeholder="&nbsp;주민등록번호" name="resident_no_1">
 			<i><strong>-</strong></i>
-			<input type="text" class="form-control" style="height:35px;width:150px;display:inline-block">
+			<input type="text" class="form-control" style="height:35px;width:150px;display:inline-block" name="resident_no_2">
 		</td>
 	</tr>
 	<tr>
 		<td style="width:17%"><button class="btn btn-dark">우편번호</button></td>
 		<td align="left" colspan="3">
-			<input id="zipcode" class="form-control" type="text" style="height:35px;width:170px;display:inline-block" placeholder="&nbsp;버튼을 클릭하세요.">
+			<input id="zipcode" class="form-control" type="text" style="height:35px;width:170px;display:inline-block" 
+					placeholder="&nbsp;버튼을 클릭하세요." name="emp_zipcode">
 			<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal" style="height:38px;width:55px;">
 			  <i id="btn_zipcode" style="font-size:28px;" class='far' onclick="location.href='#'">&#xf0e0;</i>
 			</button>
@@ -171,32 +179,35 @@
 	<tr>
 		<td style="width:17%"><button class="btn btn-dark">&nbsp;주&nbsp;&nbsp;소&nbsp;</button></td>
 		<td colspan="3">
-			<input id="adrr1" class="form-control" type="text" style="height:35px;width:220px;display:inline-block" placeholder="&nbsp;주소">
-			<input id="adrr2" class="form-control" type="text" style="height:35px;width:220px;display:inline-block">
+			<input id="adrr1" class="form-control" type="text" style="height:35px;width:220px;display:inline-block" 
+					placeholder="&nbsp;주소" name="emp_addr_1">
+			<input id="adrr2" class="form-control" type="text" style="height:35px;width:220px;display:inline-block"
+					 name="emp_addr_2">
 		</td>
 	</tr>
 	<tr>
         <td style="width:17%;"><button class="btn btn-dark">입사날짜</button></td>
         <td colspan="1">                    
-            <input class="form-control" type="date" id="enrollment" name="enrollment" style="height:35px;width:200px;display:inline-block">
+            <input class="form-control" type="date" id="emp_indate" name="emp_indate" style="height:35px;width:200px;display:inline-block">
             <i class="fa fa-calendar-check-o" style="font-size:24px"></i>
         </td>
      </tr>
      <tr>   
         <td style="width:17%;"><button class="btn btn-dark">퇴사날짜</button></td>
         <td colspan="3">                    
-            <input type="date" class="form-control" id="enrollment" name="enrollment" style="height:35px;width:200px;display:inline-block">
+            <input type="date" class="form-control" id="emp_outdate" name="emp_outdate" style="height:35px;width:200px;display:inline-block">
             <i class="fa fa-calendar-check-o" style="font-size:24px"></i>
         </td>
     </tr>
     	<tr>
 		<td style="width:17%"><button class="btn btn-dark">급여계좌</button></td>
 		<td align="left">
-			<input type="text" class="form-control" style="height:35px;width:190px;font-size:8pt;display:inline-block" placeholder="'-'를 제외한 숫자만 입력하시오">
+			<input type="text" class="form-control" style="height:35px;width:190px;font-size:8pt;display:inline-block" 
+					placeholder="'-'를 제외한 숫자만 입력하시오" name="sal_account">
 		</td>
 		<td style="width:16%"><button class="btn btn-dark">&nbsp;은&nbsp;&nbsp;행&nbsp;</button></td>
 		<td style="width:130px"> 
-			<select name="dept_name" class="custom-select mb-2" style="width:130px">
+			<select name="bank_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
 			      <option value="1">국민</option>
 			      <option value="2">신한</option>
@@ -209,7 +220,7 @@
     <tr>
 		<td style="width:17%"><button class="btn btn-dark">&nbsp;부서명&nbsp;</button></td>
 		<td style="width:130px"> 
-			<select name="dept_name" class="custom-select mb-2" style="width:130px">
+			<select name="dept_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
 			      <option value="manager">총무부</option>
 			      <option value="sales">영업부</option>
@@ -218,7 +229,7 @@
  		</td>
 		<td style="width:17%"><button class="btn btn-dark">&nbsp;직급명&nbsp;</button></td>
 		<td style="width:130px"> 
-			<select name="dept_name" class="custom-select mb-2" style="width:130px">
+			<select name="rank_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
 			      <option value="1">부장</option>
 			      <option value="2">차장</option>
@@ -232,7 +243,7 @@
 	<tr>
 		<td style="width:17%"><button class="btn btn-dark">&nbsp;직책명&nbsp;</button></td>
 		<td style="width:130px"> 
-			<select name="dept_name" class="custom-select mb-2" style="width:130px">
+			<select name="posit_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
 			      <option value="manager">생산1팀장</option>
 			      <option value="sales">영업부장</option>
@@ -240,16 +251,23 @@
  		</td>
 		<td style="width:17%"><button class="btn btn-dark">전역구분</button></td>
 		<td style="width:130px"> 
-			<select name="dept_name" class="custom-select mb-2" style="width:130px">
+			<select name="leave_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
+			      <option value="4">미필</option>
 			      <option value="1">만기전역</option>
 			      <option value="2">의가사</option>
 			      <option value="3">현역부적합</option>
-			      <option value="4">미필</option>
  			</select>
  		</td>
 	</tr>
+	<tr>
+		<td style="width:17%" colspan="4" align="right">
+			<button class="btn btn-outline-dark" style="margin-right:2px" onclick="location.href='#'">취소</button>
+			<button class="btn btn-outline-dark" onclick="javascript:addAction()">등록</button>
+		</td>
+	</tr>
   </table>
+  </form>
 </div>
 </div>
 </div>

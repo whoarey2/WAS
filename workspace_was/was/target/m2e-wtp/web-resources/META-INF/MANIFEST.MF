@@ -1,8 +1,12 @@
 Manifest-Version: 1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 Built-By: kosmo_09
 =======
 Built-By: 1
+>>>>>>> origin/master
+=======
+Built-By: kosmo_07
 >>>>>>> origin/master
 Build-Jdk: 1.8.0_191
 Created-By: Maven Integration for Eclipse

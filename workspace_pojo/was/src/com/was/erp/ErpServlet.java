@@ -1,6 +1,6 @@
 ﻿package com.was.erp;
 
-
+//190917
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
@@ -33,15 +34,17 @@ public class ErpServlet extends HttpServlet{
 		hmb.selectBind(pMap);
 		}
 		ActionServlet aServlet = ControllerMapping.mapping(mapping,pMap);
-		logger.info("컨트롤러매핑에서 컨트롤러 결정함.");
 		Model model = aServlet.execute();
 		List<Map<String,Object>> rList = model.getAddAttribute();
-		logger.info("rList :"+rList.size());
 		req.setAttribute("rList", rList);
-		String fullView = model.getFullView();
 		RequestDispatcher view = null;
+		HttpSession session = null;
 		try {
-			view = new ResultView().resultView(req,res,mapping,fullView);
+			ResultView resultView = new ResultView(req,res,mapping,model);
+			view = resultView.resultView();
+			session = resultView.getSession();
+			if(session==null) session = req.getSession();
+			resultView.addCookie();
 		} catch (Exception e) {
 			logger.info(e.toString());
 		}

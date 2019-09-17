@@ -25,14 +25,14 @@ public class ProductController implements ActionServlet {
 			List<Map<String,Object>> rList = erpLogic.productInsert(pMap);
 			logger.info("productInsert 결과 :::::::::"+rList.get(0).get("msg").toString());
 			model.setAddAttribute(rList);
-			model.setViewPath("WEB-INF/views/was");
+			model.setViewPath("WEB-INF/views/products");
 			model.setViewName("productsAdd");
 			model.setViewExtension("jsp");
 		}
 		else if("productList".equals(mapping)) {
 			List<Map<String,Object>> rList = erpLogic.productList(pMap);
 			model.setAddAttribute(rList);
-			model.setViewPath("WEB-INF/views/was");
+			model.setViewPath("WEB-INF/views/products");
 			model.setViewName("productsAdd");
 			model.setViewExtension("jsp");
 		}
@@ -40,7 +40,7 @@ public class ProductController implements ActionServlet {
 			List<Map<String,Object>> rList = erpLogic.productShipIn(pMap);
 			logger.info("productShipOut 결과 :::::::::"+rList.get(0).get("msg").toString());
 			model.setAddAttribute(rList);
-			model.setViewPath("WEB-INF/views/was");
+			model.setViewPath("WEB-INF/views/products");
 			model.setViewName("main");
 			model.setViewExtension("jsp");
 		}
@@ -48,7 +48,7 @@ public class ProductController implements ActionServlet {
 			List<Map<String,Object>> rList = erpLogic.productShipOut(pMap);
 			logger.info("productShipOut 결과 :::::::::"+rList.get(0).get("msg").toString());
 			model.setAddAttribute(rList);
-			model.setViewPath("WEB-INF/views/was");
+			model.setViewPath("WEB-INF/views/products");
 			model.setViewName("main");
 			model.setViewExtension("jsp");
 		}
