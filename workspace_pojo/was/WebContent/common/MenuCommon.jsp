@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List, java.util.Map" %>      
+<%
+	List<Map<String,Object>> rList =
+				(List<Map<String,Object>>)request.getAttribute("rList");
+	String msg = null;
+	String outtime = null;
+	if(rList!=null){
+		Map<String,Object> rMap = rList.get(0);
+		msg = rMap.get("msg").toString();
+		outtime = rMap.get("outtime").toString();
+	}
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +26,8 @@
       </div>
        <div class="row">
           <div style="background-color:#383E49; width:320px; height:90px; color:#FFFFFF; text-align: center;">
-             <p>반갑습니다, 사원<strong> <%= msg %></strong>님</p>
-            <h6>최근 접속 시간은...</h6>
+             <p>반갑습니다, 사원<strong> <%if(msg!=null) {out.print(msg);} %></strong>님</p><!-- 저 msg는 include로 사용하는 쪽에서 선언되어있어 -->
+            <h6>최근 접속 시간은...<%if(outtime!=null) {out.print(outtime);} %></h6>
          </div>
    </div>
    <div class="row">
@@ -27,7 +39,7 @@
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">품목조회</a>
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">재고등록</a>
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">재고조회</a>
-                  <a href="productsAdd.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">생산품등록</a>
+                  <a href="/erp/productList.was" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">생산품등록</a>
                   <a href="registerCustomer.jsp" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">거래처등록/조회</a>
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">배송처조회</a>
                   <a href="#" class="list-group-item list-group-item-action" style="background-color: #434a57; color:#FFFFFF;text-align: center">배송처등록</a>

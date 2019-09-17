@@ -9,11 +9,12 @@
 <title>WAS, AQUA</title>
 </head>
 <body>
+<div class="container-fluid">
 <div class="row">
-   <div class="col-sm-3">
-      <%@ include file="/common/MenuCommon.jsp" %>
+   <div style="width:20%">
+       <%@ include file="/common/MenuCommon.jsp" %>
   </div>
-   <div class="col-sm-9">
+   <div style="width:80%">
    <div class="row" style="height: 100px;"></div>
          <%@ include file="/common/chart.jsp" %>
       <div class="row">
@@ -57,6 +58,7 @@
          </table>
       </div>
       </div>
+   </div>
    </div>
    </div>
 </body>
