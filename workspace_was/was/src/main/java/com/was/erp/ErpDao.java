@@ -15,6 +15,7 @@ public class ErpDao {
 
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
+/////////////////////////////emp/////////////////////////////	
 	public void empLogin(Map<String, Object> pMap) {
 		pMap.put("msg", "");
 		pMap.put("outtime", "");
@@ -24,6 +25,8 @@ public class ErpDao {
 		pMap.put("msg", "");
 		sqlSessionTemplate.selectOne("empSignUp", pMap);
 	}
+/////////////////////////////emp/////////////////////////////
+////////////////////////////product//////////////////////////
 	public void productShipIn(Map<String, Object> pMap) {
 		pMap.put("msg", "");
 		sqlSessionTemplate.selectOne("productShipIn", pMap);
@@ -42,5 +45,6 @@ public class ErpDao {
 			= sqlSessionTemplate.selectList("productList",pMap);
 		return rList;
 	}
+////////////////////////////product//////////////////////////
 
 }

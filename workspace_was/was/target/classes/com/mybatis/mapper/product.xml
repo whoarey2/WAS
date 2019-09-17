@@ -4,5 +4,8 @@
 	<select id="currentTime" parameterType="int" resultType="java.lang.String">
 	 	select TO_CHAR(sysdate,'YYYY-MM-DD') from dual
     </select>
-
+    <select id="productList" parameterType="map" resultType="map">
+    	select pd_no, pd_weight, pd_regdate, ship_code, fish_code
+    		from product
+    </select>
 </mapper> 

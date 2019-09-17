@@ -25,13 +25,8 @@
 <body>
 <div class="container-fluid">
 <div class="row">
-<<<<<<< HEAD
 	<div style="width:20%">
 		<%@ include file="/common/MenuCommon.jsp" %>
-=======
-	<div class="col-sm-3">
-		<%@ include file="../common/MenuCommon.jsp" %>
->>>>>>> origin/master
     </div>
   <div style="width:80%">
   <!-- ========================================생산품 상세조회 영역================================= -->
