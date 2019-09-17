@@ -7,11 +7,11 @@ git commit -m"dfdff" //여기서 등록
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 git checkout master //  내 마스터로 넘어감 각자 마스터가 다름
 
+git merge origin/master 원격의 최신걸 내 로컬로 땡겨옴
+
 git merge ghost // 내마스터에서 고스트에서 올린 정보를 끌어당김
 
 (보류)git commit -m"sdf" // 내마스터에서 올릴거 등록
-
-git merge origin/master 원격의 최신걸 내 로컬로 땡겨옴
 
 git push origin master
 
