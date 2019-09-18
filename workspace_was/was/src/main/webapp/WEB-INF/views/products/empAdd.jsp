@@ -164,6 +164,9 @@
 					placeholder="&nbsp;주민등록번호" name="resident_no_1">
 			<i><strong>-</strong></i>
 			<input type="text" class="form-control" style="height:35px;width:150px;display:inline-block" name="resident_no_2">
+			<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#" style="height:38px;width:40px;">
+			  <i style='font-size:16px; align:center' class='fas'>&#xf00c;</i>
+			</button>
 		</td>
 	</tr>
 	<tr>
@@ -209,11 +212,11 @@
 		<td style="width:130px"> 
 			<select name="bank_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
-			      <option value="1">국민</option>
-			      <option value="2">신한</option>
-			      <option value="3">농협</option>
-			      <option value="4">하나</option>
-			      <option value="5">스탠다드차타드</option>
+			      <option value="국민">국민</option>
+			      <option value="신한">신한</option>
+			      <option value="농협">농협</option>
+			      <option value="하나">하나</option>
+			      <option value="스탠다드차타드">스탠다드차타드</option>
  			</select>
  		</td>
 	</tr>
@@ -222,20 +225,20 @@
 		<td style="width:130px"> 
 			<select name="dept_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
-			      <option value="manager">총무부</option>
-			      <option value="sales">영업부</option>
-			      <option value="products">생산부</option>
+			      <option value="총무부">총무부</option>
+			      <option value="영업부">영업부</option>
+			      <option value="생산부">생산부</option>
  			</select>
  		</td>
 		<td style="width:17%"><button class="btn btn-dark">&nbsp;직급명&nbsp;</button></td>
 		<td style="width:130px"> 
 			<select name="rank_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
-			      <option value="1">부장</option>
-			      <option value="2">차장</option>
-			      <option value="3">팀장</option>
-			      <option value="4">대리</option>
-			      <option value="5">사원</option>
+			      <option value="부장">부장</option>
+			      <option value="차장">차장</option>
+			      <option value="팀장">팀장</option>
+			      <option value="대리">대리</option>
+			      <option value="사원">사원</option>
  			</select>
  		</td>
 	</tr>
@@ -245,18 +248,18 @@
 		<td style="width:130px"> 
 			<select name="posit_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
-			      <option value="manager">생산1팀장</option>
-			      <option value="sales">영업부장</option>
+			      <option value="생산">생산1팀장</option>
+			      <option value="영업부장">영업부장</option>
  			</select>
  		</td>
 		<td style="width:17%"><button class="btn btn-dark">전역구분</button></td>
 		<td style="width:130px"> 
 			<select name="leave_code" class="custom-select mb-2" style="width:130px">
 			      <option selected>선택하세요</option>
-			      <option value="4">미필</option>
-			      <option value="1">만기전역</option>
-			      <option value="2">의가사</option>
-			      <option value="3">현역부적합</option>
+			      <option value="미필">미필</option>
+			      <option value="만기전역">만기전역</option>
+			      <option value="의가사">의가사</option>
+			      <option value="현역부적합">현역부적합</option>
  			</select>
  		</td>
 	</tr>
